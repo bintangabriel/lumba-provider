@@ -1,0 +1,15 @@
+{
+  "builds" : [
+      {
+          "src": "lumba_provider/wsgi.py",
+          "use": "@vercel/python"
+      }
+  ],
+  "routes" : [
+      {
+          "src": "/(.*)",
+          "dest": "lumba_provider/wsgi.py"
+      }
+  
+  ]
+}
