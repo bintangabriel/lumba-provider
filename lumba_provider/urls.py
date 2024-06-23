@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from modeling import urls as modeling_urls
+import modeling.urls as ModelingUrls
+import workspace.urls as WorkspaceUrls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('modeling/', include(modeling_urls))
+    path('', include(WorkspaceUrls)),
+    path('modeling/', include(ModelingUrls))
 ]
