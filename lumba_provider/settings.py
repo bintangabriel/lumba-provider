@@ -28,7 +28,12 @@ SECRET_KEY = 'django-insecure-8$@l&+2qrh=a3q5rckd9_y0=8kk6s-49-*h)neoxwslv!&pj*c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://lumba-provider.vercel.app", "127.0.0.1", "lumba-provider-6uscdexfj-bintangs-projects-7c25a5f3.vercel.app"]
+ALLOWED_HOSTS = [
+  "lumba-provider.vercel.app", 
+  "127.0.0.1", 
+  "lumba-provider-6uscdexfj-bintangs-projects-7c25a5f3.vercel.app",
+  "lumba-provider-9tcjjr7cg-bintangs-projects-7c25a5f3.vercel.app"
+]
 
 
 # Example session configuration in settings.py
