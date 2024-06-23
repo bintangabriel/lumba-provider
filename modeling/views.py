@@ -3,7 +3,9 @@ from .models import *
 from .serializers import *
 from django.http import JsonResponse
 from workspace.models import *
+from rest_framework.decorators import *
 
+@api_view(['POST'])
 def save_model(request):
     # fetch request file & model metadata
     model_metadata = json.loads(request.body)
@@ -49,7 +51,7 @@ def save_model(request):
 
     return JsonResponse(obsegmodel_serializer.errors)
     
-
+@api_view(['GET'])
 def get_workspace(req):
   print('hai')
   workspaces = Workspace.objects.all()
