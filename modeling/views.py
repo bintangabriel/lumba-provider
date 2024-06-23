@@ -4,7 +4,9 @@ from .serializers import *
 from django.http import JsonResponse
 from workspace.models import *
 from rest_framework.decorators import *
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 @api_view(['POST'])
 def save_model(request):
     # fetch request file & model metadata
