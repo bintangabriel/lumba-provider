@@ -60,3 +60,14 @@ def get_workspace(req):
   workspace_list = list(workspaces.values())  # Convert QuerySet to list of dictionaries
 
   return JsonResponse(workspace_list, safe=False)
+
+@api_view(['POST'])
+def update_training_record(request):
+  payload = json.loads(request.body)
+  training_record = ModelTrainingRecord.objects.get(id=payload['id'])
+  modeltrainingrecord_serializer = ModelTrainingRecordSerializer(training_record,data=payload)
+  if modeltrainingrecord_serializer.is_valid():
+    modeltrainingrecord_serializer.save()
+    return JsonResponse(modeltrainingrecord_serializer.data)
+  
+  return JsonResponse(modeltrainingrecord_serializer.errors)
